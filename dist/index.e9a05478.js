@@ -1,7 +1,9 @@
 const $siteList = $(".siteList");
 const $lastLi = $siteList.find("li.last");
-const x = localStorage.getItem("x");
-const xObject = JSON.parse(x);
+const x = localStorage.getItem("x") //读取localStorage
+;
+const xObject = JSON.parse(x) //解析 JSON 字符串，构造由字符串描述的 JavaScript 值或对象
+;
 const hasMap = xObject || [
     {
         logo: "A",
@@ -71,13 +73,16 @@ $(".addButton").on("click", ()=>{
     });
     render();
 });
-window.onbeforeunload = ()=>{
+/*关闭页面时将hasMap转化为字符串存入本地*/ window.onbeforeunload = ()=>{
     const string = JSON.stringify(hasMap);
     localStorage.setItem("x", string);
 };
-$(document).on("keypress", (e)=>{
+/*监听键盘输入*/ $(document).on("keypress", (e)=>{
     const { key  } = e;
     for(let i = 0; i < hasMap.length; i++)if (hasMap[i].logo.toLowerCase() === key) window.open(hasMap[i].url);
 });
+$("input").on("keypress", (e)=>{
+    e.stopPropagation();
+});
 
-//# sourceMappingURL=index.3e28a6cb.js.map
+//# sourceMappingURL=index.e9a05478.js.map

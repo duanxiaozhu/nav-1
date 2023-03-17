@@ -211,6 +211,7 @@ body {
   .siteList .addButton:hover {
     opacity: .7;
     transform: scale(1.2);
+    box-shadow: 0 0 6px #000c;
   }
 }
 
@@ -232,4 +233,4 @@ body {
   font-size: 14px;
 }
 
-/*# sourceMappingURL=index.59fac67b.css.map */
+/*# sourceMappingURL=index.2e2b7cd5.css.map */
